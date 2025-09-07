@@ -70,6 +70,18 @@ az containerapp up \
 
 Replace `your-secure-api-key-value` with a strong, randomly generated key.
 
+### Understanding Container Apps Environment
+
+When you deploy an Azure Container App, a **Container Apps Environment** is automatically created (or an existing one is used if specified). This environment is a secure boundary around a group of container apps that:
+
+- Provides a shared virtual network for your container apps
+- Enables secure internal communications between container apps in the same environment
+- Controls ingress from external sources
+- Manages common settings like logging configuration
+- Provides a fully managed Kubernetes-like platform without requiring Kubernetes expertise
+
+The environment acts as a logical boundary for your container apps and provides the infrastructure needed to run them securely and efficiently.
+
 ### Finding Your Application URL
 
 The URL for the deployed app is in the output of the `az containerapp up` command. Open the URL in your browser to see the web app running in Azure. The form of the URL will look like the following: `https://web-aca-app.<generated-text>.<location-info>.azurecontainerapps.io`, where the `<generated-text>` and `<location-info>` are unique to your deployment.
